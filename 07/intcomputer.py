@@ -1,4 +1,6 @@
 import re
+import copy
+import collections
 
 ADD = 1
 MUL = 2
@@ -15,55 +17,79 @@ IMMEDIATE = 1
 
 num_params = {ADD: 3, MUL: 3, INPUT: 1, OUTPUT: 1, JUMP_IF_TRUE: 2, JUMP_IF_FALSE: 2, LESS_THAN: 3, EQUALS: 3, HALT: 0}
 
-def load(filename):
-    with open(filename) as file:
-        return [int(x) for x in re.findall("-?\d+", file.read())]
+class Computer:
+    def __init__(self, program, inputs=None):
+        self.program = program[:]
+        self.inputs = collections.deque(inputs[:] if inputs is not None else [])
+        self.outputs = []
+        self.pc = 0
+        self.halted = False
 
-def execute(program, inputs, print_outputs=False):
-    program = program[:]
-    inputs = inputs[::-1]
+    def needs_input(self):
+        return self.program[self.pc]%100 == INPUT and len(self.inputs) == 0
 
-    pc = 0
-    outputs = []
+    
+    def send(self, x):
+        """
+        add x to the input queue.
+        """
+        self.inputs.appendleft( x)
 
-    while True:
+    def tick(self):
+        """
+        Advance state by one instruction.
+        If an output opcode is executed, return its result; otherwise, return None.
+        """
         advance_pc = True
-        mode, opcode = divmod(program[pc], 100)
+        mode, opcode = divmod(self.program[self.pc], 100)
         if opcode not in num_params:
             raise Exception(f"Unrecognized opcode {opcode}")
-        #print(pc, mode, opcode)
-        params = [program[pc+1+i] for i in range(num_params[opcode])]
+
+        params = [self.program[self.pc+1+i] for i in range(num_params[opcode])]
         modes = [(mode // (10**i))%10 for i in range(num_params[opcode])]
-        #print("  ", params, modes)
-        fetch = lambda x: params[x] if modes[x] == IMMEDIATE else program[params[x]]
+
+        fetch = lambda x: params[x] if modes[x] == IMMEDIATE else self.program[params[x]]
+
+        output = None
+
         if opcode == ADD:
-            program[params[2]] = fetch(0) + fetch(1)
+            self.program[params[2]] = fetch(0) + fetch(1)
         elif opcode == MUL:
-            program[params[2]] = fetch(0) * fetch(1)
+            self.program[params[2]] = fetch(0) * fetch(1)
         elif opcode == INPUT:
-            program[params[0]] = inputs.pop()
+            self.program[params[0]] = self.inputs.pop()
         elif opcode == OUTPUT:
-            x = program[params[0]]
-            outputs.append(x)
-            if print_outputs:
-                print(x)
+            output = self.program[params[0]]
+            self.outputs.append(output)
         elif opcode == JUMP_IF_TRUE:
             if fetch(0) != 0:
-                pc = fetch(1)
+                self.pc = fetch(1)
                 advance_pc = False
         elif opcode == JUMP_IF_FALSE:
             if fetch(0) == 0:
-                pc = fetch(1)
+                self.pc = fetch(1)
                 advance_pc = False
         elif opcode == LESS_THAN:
-            program[params[2]] = 1 if fetch(0) < fetch(1) else 0
+            self.program[params[2]] = 1 if fetch(0) < fetch(1) else 0
         elif opcode == EQUALS:
-            program[params[2]] = 1 if fetch(0) == fetch(1) else 0
+            self.program[params[2]] = 1 if fetch(0) == fetch(1) else 0
         elif opcode == HALT:
-            break
+            self.halted = True
+            return
         else:
             raise Exception(f"opcode {opcode} not implemented yet.")
 
         if advance_pc:
-            pc += 1 + num_params[opcode]
-    return outputs
+            self.pc += 1 + num_params[opcode]
+
+        return output
+
+def load(filename):
+    with open(filename) as file:
+        return [int(x) for x in re.findall("-?\d+", file.read())]
+
+def execute(program, inputs):
+    computer = Computer(program, inputs)
+    while not computer.halted:
+        computer.tick()
+    return computer.outputs
