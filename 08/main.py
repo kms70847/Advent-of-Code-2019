@@ -20,6 +20,8 @@ while True:
     except StopIteration:
         break
 
+x = min(layers, key=lambda l: count(l, 0))
+print(count(x, 1) * count(x,2))
 
 output = []
 for j in range(height):
