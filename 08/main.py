@@ -1,36 +1,24 @@
-def count(layer, x):
-    assert isinstance(layer, list) and isinstance(layer[0], list) and isinstance(layer[0][0], int)
-    return sum(col.count(x) for col in layer)
-
 with open("input") as file:
-    data = iter(map(int, file.read().strip()))
+    data = list(map(int, file.read().strip()))
 
 width = 25
 height = 6
-layers = []
-while True:
-    try:
-        layer = []
-        for j in range(height):
-            row = []
-            for i in range(width):
-                row.append(next(data))
-            layer.append(row)
-        layers.append(layer)
-    except StopIteration:
-        break
+area = width*height
+num_layers = len(data) // (width*height)
 
-x = min(layers, key=lambda l: count(l, 0))
-print(count(x, 1) * count(x,2))
+x = min(range(0, len(data), width*height), key=lambda i: data[i:i+area].count(0))
+layer = data[x: x+area]
+print(layer.count(1) * layer.count(2))
 
 output = []
 for j in range(height):
     row = []
     for i in range(width):
         pixel = 2
-        for layer in layers:
-            if layer[j][i] in (0,1):
-                pixel = layer[j][i]
+        for k in range(num_layers):
+            x = data[k*area+j*width+i]
+            if x in (0,1):
+                pixel = x
                 break
         row.append(" .?"[pixel])
     output.append("".join(row))
