@@ -1,25 +1,37 @@
 import tkinter
 import intcomputer as ic
 
+AUTOMATIC_CONTROL = True
 booted = False
 
+ball_x = None
+paddle_x = None
+
+def cmp(a,b):
+    if a < b: return -1
+    elif a == b: return 0
+    else: return 1
+
 def update():
-    print(computer.halted, computer.needs_input())
     global booted
+    global ball_x
+    global paddle_x
     while True:
+        if computer.needs_input() and AUTOMATIC_CONTROL:
+            computer.send(cmp(ball_x, paddle_x))
         if not (computer.halted or computer.needs_input()):
             x, y, value = [computer.tick_until_output() for _ in range(3)]
-            if x is None: 
-                print("Done?"); 
+            if x is None: #probably needs input again
                 break
             if x== -1 and y == 0:
                 print("Score:", value)
                 booted = True
                 break
+            if value == 3: paddle_x = x
+            if value == 4: ball_x = x
             color = ["white", "black", "red", "green", "blue"][value]
             canvas.itemconfig(cell_ids[x,y], fill=color)
         if booted: break
-        print(".")
     root.after(10, update)
 
 program = ic.load("input")
