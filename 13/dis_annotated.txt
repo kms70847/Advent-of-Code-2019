@@ -235,10 +235,10 @@
 109, -3                        # 451: relative_base -= 3
 2105, 1, 0                     # 453: GOTO state[relative_base]
 
-#FUNCTION: `modulus(a,b,c,d,e,f,g)`
+#FUNCTION: `mult_add_mod(a,b,c,d,e,f,g)`
 #a somewhat roundabout way of calculating `((a*b)+c)%d`.
 #Effectively equivalent to:
-#def modulus(a, b, c, d, e, f):
+#def mult_add_mod(a, b, c, d, e, f):
 #    e = a * b + c
 #    while e >= d*64:
 #        e -= d*64
@@ -308,7 +308,7 @@
 21102, 1, 67, 3                # 615: state[relative_base + 3] = 67
 21101, 1080, 0, 4              # 619: state[relative_base + 4] = 1080
 21102, 1, 630, 0               # 623: state[relative_base] = 630
-1105, 1, 456                   # 627: GOTO 456 -- call modulus(a,b,c,d,e,f,g), then return here
+1105, 1, 456                   # 627: GOTO 456 -- call mult_add_mod(a,b,c,d,e,f,g), then return here
 21201, 1, 1719, -2             # 630: state[relative_base - 2] = state[relative_base + 1] + 1719
 109, -3                        # 634: relative_base -= 3
 2106, 0, 0                     # 636: GOTO state[relative_base]
