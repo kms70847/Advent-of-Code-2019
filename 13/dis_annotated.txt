@@ -235,9 +235,20 @@
 109, -3                        # 451: relative_base -= 3
 2105, 1, 0                     # 453: GOTO state[relative_base]
 
-#FUNCTION: `lol_idk(a,b,c,d,e,f,g)`
-#Some kind of crazy mathematical scrambler. Called exclusively by function `value_of_block_at`.
-#Most likely this is intentionally confusing in order to obfuscate the true value of each block.
+#FUNCTION: `modulus(a,b,c,d,e,f,g)`
+#a somewhat roundabout way of calculating `((a*b)+c)%d`.
+#Effectively equivalent to:
+#def modulus(a, b, c, d, e, f):
+#    e = a * b + c
+#    while e >= d*64:
+#        e -= d*64
+#    while e >= d*8:
+#        e -= d*8
+#    while e >= d:
+#        e -= d
+#    return e
+#
+#the three separate while loops are so that e falls below d more quickly. If you erased the first two loops, it would take up to 64 times as long to execute.
 109, 8                         # 456: relative_base += 8
 22202, -7, -6, -3              # 458: state[relative_base - 3] = state[relative_base - 7] * state[relative_base - 6]
 22201, -3, -5, -3              # 462: state[relative_base - 3] = state[relative_base - 3] + state[relative_base - 5]
@@ -297,7 +308,7 @@
 21102, 1, 67, 3                # 615: state[relative_base + 3] = 67
 21101, 1080, 0, 4              # 619: state[relative_base + 4] = 1080
 21102, 1, 630, 0               # 623: state[relative_base] = 630
-1105, 1, 456                   # 627: GOTO 456 -- call lol_idk(a,b,c,d,e,f,g), then return here
+1105, 1, 456                   # 627: GOTO 456 -- call modulus(a,b,c,d,e,f,g), then return here
 21201, 1, 1719, -2             # 630: state[relative_base - 2] = state[relative_base + 1] + 1719
 109, -3                        # 634: relative_base -= 3
 2106, 0, 0                     # 636: GOTO state[relative_base]
