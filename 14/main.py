@@ -1,6 +1,5 @@
 import collections
 import math
-from fractions import Fraction
 
 def try_int(x):
     try:
@@ -23,15 +22,6 @@ def calc(filename, fuel_amt=1):
                 d[result]["ingredients"].append((req, req_amt))
 
     quantities = collections.defaultdict(int, {"FUEL": fuel_amt})
-    # while any(key != "ORE" for key in quantities):
-        # x = next(k for k,v in quantities.items() if k != "ORE" and v > 0)
-        # m = int(math.ceil(quantities[x] / d[x]["amt"])) 
-        # del quantities[x]
-        # for req, req_amt in d[x]["ingredients"]:
-            # quantities[req] += req_amt * m
-        # print(quantities)
-
-    # return math.ceil(quantities["ORE"])
     
     while any(key != "ORE" and value > 0 for key, value in quantities.items()):
         x = next(k for k,v in quantities.items() if k != "ORE" and v > 0)
@@ -39,7 +29,6 @@ def calc(filename, fuel_amt=1):
         quantities[x] -= d[x]["amt"] * m
         for req, req_amt in d[x]["ingredients"]:
             quantities[req] += req_amt * m
-        #print(quantities)
 
     return quantities["ORE"]
 
