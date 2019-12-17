@@ -123,6 +123,16 @@ class Computer:
             x = self.tick()
             if x is not None:
                 return x
+    
+    def tick_until_blocked(self):
+        """tick until the program halts, or it needs input. Returns a list of values outputted in the meantime."""
+        results = []
+        while not (self.halted or self.needs_input()):
+            x = self.tick()
+            if x is not None:
+                results.append(x)
+        return results
+
             
 def load(filename):
     with open(filename) as file:
