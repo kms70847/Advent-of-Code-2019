@@ -1,7 +1,7 @@
 import tkinter
 import intcomputer as ic
 
-AUTOMATIC_CONTROL = True
+AUTOMATIC_CONTROL = False
 booted = False
 
 ball_x = None
