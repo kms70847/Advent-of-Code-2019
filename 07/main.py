@@ -1,10 +1,10 @@
-import intcomputer
+import intcomputer as ic
 import functools
 import itertools
 
 @functools.lru_cache(None)
 def amplify(signal, input):
-    return intcomputer.execute(program, [input, signal])[-1]
+    return ic.Computer(program, [input, signal]).tick_until_blocked()[-1]
 
 def power(signals):
     output = 0
@@ -13,7 +13,7 @@ def power(signals):
     return output
 
 def feedback_power(signals):
-    computers = [intcomputer.Computer(program, [signal]) for signal in signals]
+    computers = [ic.Computer(program, [signal]) for signal in signals]
     computers[0].send(0)
     while not computers[-1].halted:
         if all (c.halted or c.needs_input() for c in computers):
@@ -25,7 +25,7 @@ def feedback_power(signals):
                     computers[(i+1)%len(computers)].send(out)
     return computers[-1].outputs[-1]
 
-program = intcomputer.load("input")
+program = ic.load("input")
 
 #part 1
 x = max((signals for signals in itertools.permutations(range(5))), key=power)
