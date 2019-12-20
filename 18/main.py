@@ -31,7 +31,7 @@ def get_immediate_neighbors(state):
         if key in keys_collected:
             continue
         if all(obstacle.lower() in keys_collected for obstacle in graph[landmark, key][1]):
-            neighbor = (key, keys_collected+(key,))
+            neighbor = (key, "".join(sorted(keys_collected+key)))
             immediate_neighbors.append(neighbor)
     return immediate_neighbors
 
@@ -61,7 +61,7 @@ def shortest_tour(cur, keys_collected=None):
 
     return min(graph[cur, key][0] + shortest_tour(key, keys_collected + (key,)) for key in immediate_neighbors)        
 
-with open("sample4") as file:
+with open("input") as file:
     for j, line in enumerate(file):
         for i, c in enumerate(line.strip()):
             field[Point(i,j)] = c
@@ -105,7 +105,7 @@ for a in landmarks.keys():
 #each node in the graph being searched is a (landmark, keys_collected) tuple.
 #the distance between nodes is equal to the number of steps required to get from one state to the next.
 print(djikstra(
-    start= ("@", ("@",)),
+    start= ("@", "@"),
     neighbor_func = get_immediate_neighbors,
     distance_func = distance,
     goal_pred = lambda state: len(state[1]) == 1+len(keys)
