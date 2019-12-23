@@ -32,10 +32,12 @@ peephole_optimizations = {
     "if 1: ": "",
     "if not 0: ": "",
     "+= -": "-= ",
-    " * 1": "",
-    "1 * ": "",
-    " + 0": "",
-    "0 + ": "",
+    #reduce addition / multiplication identities, e.g `1 * x`, `y + 0`, to reduced form, e.g. `x`, `y`.
+    #use word boundaries to ensure that `q * 10` and `10 + z` don't get reduced to `q0` and `1z`
+    re.compile(re.escape(" * 1") + r"\b"): "",
+    re.compile(r"\b" + re.escape("1 * ")): "",
+    re.compile(re.escape(" + 0") + r"\b"): "",
+    re.compile(r"\b" + re.escape("0 + ")): "",
     "+ -": "- ",
 }
 
@@ -117,7 +119,10 @@ class Instruction:
         formatted_params = [mode_reprs[mode].format(param) for mode, param in zip(self.modes, self.params)]
         line = opcode_reprs[self.opcode].format(*formatted_params)
         for k,v in peephole_optimizations.items():
-            line = line.replace(k,v)
+            if isinstance(k, str):
+                line = line.replace(k,v)
+            else: #must be a re.compile object
+                line = k.sub(v, line)
         return line
 
     @staticmethod
