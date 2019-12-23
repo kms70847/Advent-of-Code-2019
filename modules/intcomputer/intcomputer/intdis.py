@@ -55,6 +55,9 @@ def looks_like_unconditional_jump(opcode, modes, params):
         return True
     return False
 
+class InstructionParseError(Exception):
+    pass
+
 class Instruction:
     def __init__(self, opcode, modes, params, address):
         self.opcode = opcode
@@ -117,9 +120,6 @@ class Instruction:
             line = line.replace(k,v)
         return line
 
-    class InstructionParseError(Exception):
-        pass
-
     @staticmethod
     def from_program(program, pc):
         
@@ -129,11 +129,13 @@ class Instruction:
         if mode != 0 and len(str(mode)) > ic.num_params[opcode]:
             raise InstructionParseError(f"expected {ic.num_params[opcode]} modes, got {len(str(mode))}")
         modes = [(mode // (10**i))%10 for i in range(ic.num_params[opcode])]
+        if any(mode not in {ic.POSITION, ic.IMMEDIATE, ic.RELATIVE} for mode in modes):
+            raise InstructionParseError(f"unrecognized addressing modes {modes}")
         params = program[pc+1: pc+1+ic.num_params[opcode]]
         return Instruction(opcode, modes, params, pc)
 
 
-def dis(program, decompile_reachable_only=True):
+def dis(program, decompile_reachable_only=False):
 
     #identify which instructions are reachable from the beginning of the program.
     if decompile_reachable_only:
@@ -151,7 +153,13 @@ def dis(program, decompile_reachable_only=True):
                 if addr not in seen:
                     to_visit.add(addr)
     else:
-        seen = {range(len(program))}
+        seen = set()
+        for pc in range(len(program)):
+            try:
+                Instruction.from_program(program, pc)
+                seen.add(pc)
+            except InstructionParseError:
+                pass
 
     pc = 0
     while pc < len(program):
