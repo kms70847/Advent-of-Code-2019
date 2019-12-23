@@ -1,6 +1,7 @@
 import intcomputer as ic
 import re
 import sys
+import json
 
 ASUSME_RELATIVE_CALL_STACK_IDIOM = True
 
@@ -140,7 +141,14 @@ class Instruction:
         return Instruction(opcode, modes, params, pc)
 
 
-def dis(program, decompile_reachable_only=False):
+def dis(program, annotations, decompile_reachable_only=False):
+
+    def apply_annotations(line):
+        for address, name in annotations["global variables"].items():
+            line = line.replace(f"state[{address}]", name)
+        for address, name in annotations["functions"].items():
+            line = line.replace(f"GOTO {address}", f"GOTO {address} (aka {name})")
+        return line
 
     #identify which instructions are reachable from the beginning of the program.
     if decompile_reachable_only:
@@ -168,20 +176,35 @@ def dis(program, decompile_reachable_only=False):
 
     pc = 0
     while pc < len(program):
+        if str(pc) in annotations["functions"]:
+            name = annotations['functions'][str(pc)]
+            print("\n" + " " * 31 + f"# function {name}")
         if pc in seen:
             instruction = Instruction.from_program(program, pc)
             line = instruction.format()
             line = f"{str(program[pc:pc+1+len(instruction.params)]).strip('[]'):30} #{pc:4}: {line}"
+            line = apply_annotations(line)
             print(line)
             if instruction.is_terminal():
                 print("\n")
             pc += 1 + len(instruction.params)
         else:
             line = f"{str(program[pc]) + ',':30} #{pc:4} (data)"
+            if str(pc) in annotations["global variables"]:
+                line += f" aka {annotations['global variables'][str(pc)]}"
             print(line)
             pc += 1
 
 if __name__ == "__main__":
     filename = "input" if len(sys.argv) < 2 else sys.argv[1]
+    if len(sys.argv) >= 3:
+        with open(sys.argv[2]) as file:
+            annotations = json.load(file)
+    else:
+        annotations = {}
+    for section in ("global variables", "functions"):
+        if section not in annotations:
+            annotations[section] = {}
+    
     program = ic.load(filename)
-    dis(program)
+    dis(program, annotations)
