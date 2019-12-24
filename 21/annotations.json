@@ -1,0 +1,16 @@
+{
+    "global variables": {
+        "748": "TEMP",
+        "966": "STR_IDX_1"
+    },
+    "functions":{
+        "1378": "PRINT_LENGTH_PREFIXED_STR",
+        "1337": "FUNC_B",
+        "1279": "FUNC_C",
+        "1421": "FUNC_D",
+        "1301": "FUNC_E"
+    },
+    "data ranges": [
+        [716, 1259]
+    ]
+}

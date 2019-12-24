@@ -1,0 +1,1184 @@
+109, 2050                      #   0: relative_base += 2050
+21101, 0, 966, 1               #   2: state[relative_base + 1] = 966
+21102, 1, 13, 0                #   6: state[relative_base] = 13
+1105, 1, 1378                  #  10: GOTO 1378 (aka PRINT_LENGTH_PREFIXED_STR)
+
+
+21101, 0, 20, 0                #  13: state[relative_base] = 20
+1106, 0, 1337                  #  17: GOTO 1337 (aka FUNC_B)
+
+
+21101, 0, 27, 0                #  20: state[relative_base] = 27
+1106, 0, 1279                  #  24: GOTO 1279 (aka FUNC_C)
+
+
+1208, 1, 65, 748               #  27: TEMP = state[relative_base + 1] == 65
+1005, 748, 73                  #  31: if TEMP: GOTO 73
+1208, 1, 79, 748               #  34: TEMP = state[relative_base + 1] == 79
+1005, 748, 110                 #  38: if TEMP: GOTO 110
+1208, 1, 78, 748               #  41: TEMP = state[relative_base + 1] == 78
+1005, 748, 132                 #  45: if TEMP: GOTO 132
+1208, 1, 87, 748               #  48: TEMP = state[relative_base + 1] == 87
+1005, 748, 169                 #  52: if TEMP: GOTO 169
+1208, 1, 82, 748               #  55: TEMP = state[relative_base + 1] == 82
+1005, 748, 239                 #  59: if TEMP: GOTO 239
+21102, 1041, 1, 1              #  62: state[relative_base + 1] = 1041
+21101, 73, 0, 0                #  66: state[relative_base] = 73
+1105, 1, 1421                  #  70: GOTO 1421 (aka FUNC_D)
+
+
+21101, 78, 0, 1                #  73: state[relative_base + 1] = 78
+21102, 1041, 1, 2              #  77: state[relative_base + 2] = 1041
+21102, 1, 88, 0                #  81: state[relative_base] = 88
+1105, 1, 1301                  #  85: GOTO 1301 (aka FUNC_E)
+
+
+21101, 0, 68, 1                #  88: state[relative_base + 1] = 68
+21101, 1041, 0, 2              #  92: state[relative_base + 2] = 1041
+21102, 1, 103, 0               #  96: state[relative_base] = 103
+1106, 0, 1301                  # 100: GOTO 1301 (aka FUNC_E)
+
+
+1101, 0, 1, 750                # 103: state[750] = 1
+1106, 0, 298                   # 107: GOTO 298
+
+
+21102, 1, 82, 1                # 110: state[relative_base + 1] = 82
+21101, 1041, 0, 2              # 114: state[relative_base + 2] = 1041
+21101, 0, 125, 0               # 118: state[relative_base] = 125
+1106, 0, 1301                  # 122: GOTO 1301 (aka FUNC_E)
+
+
+1101, 0, 2, 750                # 125: state[750] = 2
+1105, 1, 298                   # 129: GOTO 298
+
+
+21101, 0, 79, 1                # 132: state[relative_base + 1] = 79
+21101, 1041, 0, 2              # 136: state[relative_base + 2] = 1041
+21102, 147, 1, 0               # 140: state[relative_base] = 147
+1106, 0, 1301                  # 144: GOTO 1301 (aka FUNC_E)
+
+
+21101, 84, 0, 1                # 147: state[relative_base + 1] = 84
+21102, 1041, 1, 2              # 151: state[relative_base + 2] = 1041
+21102, 162, 1, 0               # 155: state[relative_base] = 162
+1105, 1, 1301                  # 159: GOTO 1301 (aka FUNC_E)
+
+
+1101, 3, 0, 750                # 162: state[750] = 3
+1106, 0, 298                   # 166: GOTO 298
+
+
+21101, 0, 65, 1                # 169: state[relative_base + 1] = 65
+21101, 1041, 0, 2              # 173: state[relative_base + 2] = 1041
+21101, 184, 0, 0               # 177: state[relative_base] = 184
+1106, 0, 1301                  # 181: GOTO 1301 (aka FUNC_E)
+
+
+21101, 76, 0, 1                # 184: state[relative_base + 1] = 76
+21101, 1041, 0, 2              # 188: state[relative_base + 2] = 1041
+21102, 199, 1, 0               # 192: state[relative_base] = 199
+1106, 0, 1301                  # 196: GOTO 1301 (aka FUNC_E)
+
+
+21102, 1, 75, 1                # 199: state[relative_base + 1] = 75
+21101, 0, 1041, 2              # 203: state[relative_base + 2] = 1041
+21101, 0, 214, 0               # 207: state[relative_base] = 214
+1106, 0, 1301                  # 211: GOTO 1301 (aka FUNC_E)
+
+
+21102, 221, 1, 0               # 214: state[relative_base] = 221
+1106, 0, 1337                  # 218: GOTO 1337 (aka FUNC_B)
+
+
+21101, 10, 0, 1                # 221: state[relative_base + 1] = 10
+21101, 0, 1041, 2              # 225: state[relative_base + 2] = 1041
+21101, 0, 236, 0               # 229: state[relative_base] = 236
+1105, 1, 1301                  # 233: GOTO 1301 (aka FUNC_E)
+
+
+1106, 0, 553                   # 236: GOTO 553
+
+
+21101, 0, 85, 1                # 239: state[relative_base + 1] = 85
+21102, 1, 1041, 2              # 243: state[relative_base + 2] = 1041
+21102, 1, 254, 0               # 247: state[relative_base] = 254
+1105, 1, 1301                  # 251: GOTO 1301 (aka FUNC_E)
+
+
+21101, 0, 78, 1                # 254: state[relative_base + 1] = 78
+21101, 1041, 0, 2              # 258: state[relative_base + 2] = 1041
+21102, 1, 269, 0               # 262: state[relative_base] = 269
+1106, 0, 1301                  # 266: GOTO 1301 (aka FUNC_E)
+
+
+21101, 276, 0, 0               # 269: state[relative_base] = 276
+1106, 0, 1337                  # 273: GOTO 1337 (aka FUNC_B)
+
+
+21101, 10, 0, 1                # 276: state[relative_base + 1] = 10
+21101, 1041, 0, 2              # 280: state[relative_base + 2] = 1041
+21101, 291, 0, 0               # 284: state[relative_base] = 291
+1106, 0, 1301                  # 288: GOTO 1301 (aka FUNC_E)
+
+
+1102, 1, 1, 755                # 291: state[755] = 1
+1106, 0, 553                   # 295: GOTO 553
+
+
+21102, 1, 32, 1                # 298: state[relative_base + 1] = 32
+21101, 0, 1041, 2              # 302: state[relative_base + 2] = 1041
+21102, 313, 1, 0               # 306: state[relative_base] = 313
+1106, 0, 1301                  # 310: GOTO 1301 (aka FUNC_E)
+
+
+21101, 320, 0, 0               # 313: state[relative_base] = 320
+1106, 0, 1337                  # 317: GOTO 1337 (aka FUNC_B)
+
+
+21102, 1, 327, 0               # 320: state[relative_base] = 327
+1106, 0, 1279                  # 324: GOTO 1279 (aka FUNC_C)
+
+
+2102, 1, 1, 749                # 327: state[749] = state[relative_base + 1]
+21101, 65, 0, 2                # 331: state[relative_base + 2] = 65
+21101, 0, 73, 3                # 335: state[relative_base + 3] = 73
+21102, 346, 1, 0               # 339: state[relative_base] = 346
+1105, 1, 1889                  # 343: GOTO 1889
+
+
+1206, 1, 367                   # 346: if not state[relative_base + 1]: GOTO 367
+1007, 749, 69, 748             # 349: TEMP = state[749] < 69
+1005, 748, 360                 # 353: if TEMP: GOTO 360
+1102, 1, 1, 756                # 356: state[756] = 1
+1001, 749, -64, 751            # 360: state[751] = state[749] - 64
+1106, 0, 406                   # 364: GOTO 406
+
+
+1008, 749, 74, 748             # 367: TEMP = state[749] == 74
+1006, 748, 381                 # 371: if not TEMP: GOTO 381
+1101, 0, -1, 751               # 374: state[751] = -1
+1105, 1, 406                   # 378: GOTO 406
+
+
+1008, 749, 84, 748             # 381: TEMP = state[749] == 84
+1006, 748, 395                 # 385: if not TEMP: GOTO 395
+1102, 1, -2, 751               # 388: state[751] = -2
+1105, 1, 406                   # 392: GOTO 406
+
+
+21102, 1100, 1, 1              # 395: state[relative_base + 1] = 1100
+21102, 406, 1, 0               # 399: state[relative_base] = 406
+1105, 1, 1421                  # 403: GOTO 1421 (aka FUNC_D)
+
+
+21101, 32, 0, 1                # 406: state[relative_base + 1] = 32
+21101, 1100, 0, 2              # 410: state[relative_base + 2] = 1100
+21101, 0, 421, 0               # 414: state[relative_base] = 421
+1105, 1, 1301                  # 418: GOTO 1301 (aka FUNC_E)
+
+
+21101, 428, 0, 0               # 421: state[relative_base] = 428
+1105, 1, 1337                  # 425: GOTO 1337 (aka FUNC_B)
+
+
+21101, 435, 0, 0               # 428: state[relative_base] = 435
+1105, 1, 1279                  # 432: GOTO 1279 (aka FUNC_C)
+
+
+2101, 0, 1, 749                # 435: state[749] = state[relative_base + 1]
+1008, 749, 74, 748             # 439: TEMP = state[749] == 74
+1006, 748, 453                 # 443: if not TEMP: GOTO 453
+1101, 0, -1, 752               # 446: state[752] = -1
+1105, 1, 478                   # 450: GOTO 478
+
+
+1008, 749, 84, 748             # 453: TEMP = state[749] == 84
+1006, 748, 467                 # 457: if not TEMP: GOTO 467
+1101, 0, -2, 752               # 460: state[752] = -2
+1105, 1, 478                   # 464: GOTO 478
+
+
+21102, 1168, 1, 1              # 467: state[relative_base + 1] = 1168
+21101, 478, 0, 0               # 471: state[relative_base] = 478
+1105, 1, 1421                  # 475: GOTO 1421 (aka FUNC_D)
+
+
+21102, 1, 485, 0               # 478: state[relative_base] = 485
+1106, 0, 1337                  # 482: GOTO 1337 (aka FUNC_B)
+
+
+21102, 1, 10, 1                # 485: state[relative_base + 1] = 10
+21101, 1168, 0, 2              # 489: state[relative_base + 2] = 1168
+21102, 1, 500, 0               # 493: state[relative_base] = 500
+1106, 0, 1301                  # 497: GOTO 1301 (aka FUNC_E)
+
+
+1007, 920, 15, 748             # 500: TEMP = state[920] < 15
+1005, 748, 518                 # 504: if TEMP: GOTO 518
+21101, 0, 1209, 1              # 507: state[relative_base + 1] = 1209
+21102, 1, 518, 0               # 511: state[relative_base] = 518
+1105, 1, 1421                  # 515: GOTO 1421 (aka FUNC_D)
+
+
+1002, 920, 3, 529              # 518: state[529] = state[920] * 3
+1001, 529, 921, 529            # 522: state[529] = state[529] + 921
+1001, 750, 0, 0                # 526: state[0] = state[750]
+1001, 529, 1, 537              # 530: state[537] = state[529] + 1
+1001, 751, 0, 0                # 534: state[0] = state[751]
+1001, 537, 1, 545              # 538: state[545] = state[537] + 1
+102, 1, 752, 0                 # 542: state[0] = state[752]
+1001, 920, 1, 920              # 546: state[920] = state[920] + 1
+1105, 1, 13                    # 550: GOTO 13
+
+
+1005, 755, 577                 # 553: if state[755]: GOTO 577
+1006, 756, 570                 # 556: if not state[756]: GOTO 570
+21101, 1100, 0, 1              # 559: state[relative_base + 1] = 1100
+21101, 0, 570, 0               # 563: state[relative_base] = 570
+1106, 0, 1421                  # 567: GOTO 1421 (aka FUNC_D)
+
+
+21101, 0, 987, 1               # 570: state[relative_base + 1] = 987
+1105, 1, 581                   # 574: GOTO 581
+
+
+21102, 1001, 1, 1              # 577: state[relative_base + 1] = 1001
+21102, 1, 588, 0               # 581: state[relative_base] = 588
+1106, 0, 1378                  # 585: GOTO 1378 (aka PRINT_LENGTH_PREFIXED_STR)
+
+
+1102, 1, 758, 594              # 588: state[594] = 758
+102, 1, 0, 753                 # 592: state[753] = state[0]
+1006, 753, 654                 # 596: if not state[753]: GOTO 654
+21002, 753, 1, 1               # 599: state[relative_base + 1] = state[753]
+21102, 1, 610, 0               # 603: state[relative_base] = 610
+1106, 0, 667                   # 607: GOTO 667
+
+
+21101, 0, 0, 1                 # 610: state[relative_base + 1] = 0
+21101, 0, 621, 0               # 614: state[relative_base] = 621
+1105, 1, 1463                  # 618: GOTO 1463
+
+
+1205, 1, 647                   # 621: if state[relative_base + 1]: GOTO 647
+21101, 0, 1015, 1              # 624: state[relative_base + 1] = 1015
+21101, 635, 0, 0               # 628: state[relative_base] = 635
+1105, 1, 1378                  # 632: GOTO 1378 (aka PRINT_LENGTH_PREFIXED_STR)
+
+
+21102, 1, 1, 1                 # 635: state[relative_base + 1] = 1
+21101, 646, 0, 0               # 639: state[relative_base] = 646
+1105, 1, 1463                  # 643: GOTO 1463
+
+
+99                             # 646: exit()
+
+
+1001, 594, 1, 594              # 647: state[594] = state[594] + 1
+1105, 1, 592                   # 651: GOTO 592
+
+
+1006, 755, 664                 # 654: if not state[755]: GOTO 664
+1102, 0, 1, 755                # 657: state[755] = 0
+1106, 0, 647                   # 661: GOTO 647
+
+
+4, 754                         # 664: print(state[754])
+99                             # 666: exit()
+
+
+109, 2                         # 667: relative_base += 2
+1102, 1, 726, 757              # 669: state[757] = 726
+22102, 1, -1, 1                # 673: state[relative_base + 1] = state[relative_base - 1]
+21102, 1, 9, 2                 # 677: state[relative_base + 2] = 9
+21101, 697, 0, 3               # 681: state[relative_base + 3] = 697
+21101, 0, 692, 0               # 685: state[relative_base] = 692
+1105, 1, 1913                  # 689: GOTO 1913
+
+
+109, -2                        # 692: relative_base -= 2
+2105, 1, 0                     # 694: GOTO state[relative_base]
+
+
+109, 2                         # 697: relative_base += 2
+101, 0, 757, 706               # 699: state[706] = state[757]
+2101, 0, -1, 0                 # 703: state[0] = state[relative_base - 1]
+1001, 757, 1, 757              # 707: state[757] = state[757] + 1
+109, -2                        # 711: relative_base -= 2
+2106, 0, 0                     # 713: GOTO state[relative_base]
+
+
+1,                             # 716 (data)
+1,                             # 717 (data)
+1,                             # 718 (data)
+1,                             # 719 (data)
+1,                             # 720 (data)
+1,                             # 721 (data)
+1,                             # 722 (data)
+1,                             # 723 (data)
+1,                             # 724 (data)
+1,                             # 725 (data)
+0,                             # 726 (data)
+0,                             # 727 (data)
+0,                             # 728 (data)
+0,                             # 729 (data)
+0,                             # 730 (data)
+0,                             # 731 (data)
+0,                             # 732 (data)
+0,                             # 733 (data)
+0,                             # 734 (data)
+1,                             # 735 (data)
+1,                             # 736 (data)
+1,                             # 737 (data)
+1,                             # 738 (data)
+1,                             # 739 (data)
+1,                             # 740 (data)
+1,                             # 741 (data)
+1,                             # 742 (data)
+1,                             # 743 (data)
+1,                             # 744 (data)
+1,                             # 745 (data)
+1,                             # 746 (data)
+1,                             # 747 (data)
+0,                             # 748 (data) aka TEMP
+0,                             # 749 (data)
+0,                             # 750 (data)
+0,                             # 751 (data)
+0,                             # 752 (data)
+0,                             # 753 (data)
+0,                             # 754 (data)
+0,                             # 755 (data)
+0,                             # 756 (data)
+0,                             # 757 (data)
+255,                           # 758 (data)
+63,                            # 759 (data)		possibly '?'
+95,                            # 760 (data)		possibly '_'
+159,                           # 761 (data)
+191,                           # 762 (data)
+223,                           # 763 (data)
+127,                           # 764 (data)
+0,                             # 765 (data)
+109,                           # 766 (data)		possibly 'm'
+152,                           # 767 (data)
+253,                           # 768 (data)
+182,                           # 769 (data)
+236,                           # 770 (data)
+231,                           # 771 (data)
+212,                           # 772 (data)
+42,                            # 773 (data)		possibly '*'
+69,                            # 774 (data)		possibly 'E'
+154,                           # 775 (data)
+142,                           # 776 (data)
+196,                           # 777 (data)
+86,                            # 778 (data)		possibly 'V'
+214,                           # 779 (data)
+120,                           # 780 (data)		possibly 'x'
+166,                           # 781 (data)
+139,                           # 782 (data)
+175,                           # 783 (data)
+117,                           # 784 (data)		possibly 'u'
+102,                           # 785 (data)		possibly 'f'
+178,                           # 786 (data)
+124,                           # 787 (data)		possibly '|'
+204,                           # 788 (data)
+189,                           # 789 (data)
+59,                            # 790 (data)		possibly ';'
+156,                           # 791 (data)
+244,                           # 792 (data)
+92,                            # 793 (data)		possibly '\\'
+110,                           # 794 (data)		possibly 'n'
+184,                           # 795 (data)
+241,                           # 796 (data)
+87,                            # 797 (data)		possibly 'W'
+220,                           # 798 (data)
+245,                           # 799 (data)
+122,                           # 800 (data)		possibly 'z'
+167,                           # 801 (data)
+227,                           # 802 (data)
+53,                            # 803 (data)		possibly '5'
+50,                            # 804 (data)		possibly '2'
+197,                           # 805 (data)
+93,                            # 806 (data)		possibly ']'
+85,                            # 807 (data)		possibly 'U'
+234,                           # 808 (data)
+190,                           # 809 (data)
+252,                           # 810 (data)
+248,                           # 811 (data)
+54,                            # 812 (data)		possibly '6'
+163,                           # 813 (data)
+217,                           # 814 (data)
+94,                            # 815 (data)		possibly '^'
+207,                           # 816 (data)
+58,                            # 817 (data)		possibly ':'
+115,                           # 818 (data)		possibly 's'
+70,                            # 819 (data)		possibly 'F'
+99,                            # 820 (data)		possibly 'c'
+71,                            # 821 (data)		possibly 'G'
+188,                           # 822 (data)
+247,                           # 823 (data)
+168,                           # 824 (data)
+221,                           # 825 (data)
+116,                           # 826 (data)		possibly 't'
+239,                           # 827 (data)
+155,                           # 828 (data)
+186,                           # 829 (data)
+232,                           # 830 (data)
+49,                            # 831 (data)		possibly '1'
+213,                           # 832 (data)
+218,                           # 833 (data)
+137,                           # 834 (data)
+103,                           # 835 (data)		possibly 'g'
+56,                            # 836 (data)		possibly '8'
+170,                           # 837 (data)
+119,                           # 838 (data)		possibly 'w'
+34,                            # 839 (data)		possibly '"'
+242,                           # 840 (data)
+76,                            # 841 (data)		possibly 'L'
+169,                           # 842 (data)
+173,                           # 843 (data)
+46,                            # 844 (data)		possibly '.'
+172,                           # 845 (data)
+187,                           # 846 (data)
+171,                           # 847 (data)
+141,                           # 848 (data)
+153,                           # 849 (data)
+238,                           # 850 (data)
+61,                            # 851 (data)		possibly '='
+125,                           # 852 (data)		possibly '}'
+121,                           # 853 (data)		possibly 'y'
+222,                           # 854 (data)
+199,                           # 855 (data)
+243,                           # 856 (data)
+174,                           # 857 (data)
+229,                           # 858 (data)
+235,                           # 859 (data)
+226,                           # 860 (data)
+201,                           # 861 (data)
+215,                           # 862 (data)
+108,                           # 863 (data)		possibly 'l'
+138,                           # 864 (data)
+126,                           # 865 (data)		possibly '~'
+78,                            # 866 (data)		possibly 'N'
+249,                           # 867 (data)
+62,                            # 868 (data)		possibly '>'
+51,                            # 869 (data)		possibly '3'
+79,                            # 870 (data)		possibly 'O'
+57,                            # 871 (data)		possibly '9'
+118,                           # 872 (data)		possibly 'v'
+181,                           # 873 (data)
+38,                            # 874 (data)		possibly '&'
+39,                            # 875 (data)		possibly "'"
+84,                            # 876 (data)		possibly 'T'
+228,                           # 877 (data)
+55,                            # 878 (data)		possibly '7'
+77,                            # 879 (data)		possibly 'M'
+113,                           # 880 (data)		possibly 'q'
+179,                           # 881 (data)
+107,                           # 882 (data)		possibly 'k'
+136,                           # 883 (data)
+198,                           # 884 (data)
+140,                           # 885 (data)
+35,                            # 886 (data)		possibly '#'
+246,                           # 887 (data)
+205,                           # 888 (data)
+162,                           # 889 (data)
+219,                           # 890 (data)
+43,                            # 891 (data)		possibly '+'
+68,                            # 892 (data)		possibly 'D'
+185,                           # 893 (data)
+111,                           # 894 (data)		possibly 'o'
+237,                           # 895 (data)
+100,                           # 896 (data)		possibly 'd'
+183,                           # 897 (data)
+47,                            # 898 (data)		possibly '/'
+157,                           # 899 (data)
+98,                            # 900 (data)		possibly 'b'
+230,                           # 901 (data)
+114,                           # 902 (data)		possibly 'r'
+158,                           # 903 (data)
+202,                           # 904 (data)
+216,                           # 905 (data)
+203,                           # 906 (data)
+200,                           # 907 (data)
+206,                           # 908 (data)
+106,                           # 909 (data)		possibly 'j'
+233,                           # 910 (data)
+254,                           # 911 (data)
+143,                           # 912 (data)
+60,                            # 913 (data)		possibly '<'
+251,                           # 914 (data)
+101,                           # 915 (data)		possibly 'e'
+250,                           # 916 (data)
+177,                           # 917 (data)
+123,                           # 918 (data)		possibly '{'
+0,                             # 919 (data)
+0,                             # 920 (data)
+0,                             # 921 (data)
+0,                             # 922 (data)
+0,                             # 923 (data)
+0,                             # 924 (data)
+0,                             # 925 (data)
+0,                             # 926 (data)
+0,                             # 927 (data)
+0,                             # 928 (data)
+0,                             # 929 (data)
+0,                             # 930 (data)
+0,                             # 931 (data)
+0,                             # 932 (data)
+0,                             # 933 (data)
+0,                             # 934 (data)
+0,                             # 935 (data)
+0,                             # 936 (data)
+0,                             # 937 (data)
+0,                             # 938 (data)
+0,                             # 939 (data)
+0,                             # 940 (data)
+0,                             # 941 (data)
+0,                             # 942 (data)
+0,                             # 943 (data)
+0,                             # 944 (data)
+0,                             # 945 (data)
+0,                             # 946 (data)
+0,                             # 947 (data)
+0,                             # 948 (data)
+0,                             # 949 (data)
+0,                             # 950 (data)
+0,                             # 951 (data)
+0,                             # 952 (data)
+0,                             # 953 (data)
+0,                             # 954 (data)
+0,                             # 955 (data)
+0,                             # 956 (data)
+0,                             # 957 (data)
+0,                             # 958 (data)
+0,                             # 959 (data)
+0,                             # 960 (data)
+0,                             # 961 (data)
+0,                             # 962 (data)
+0,                             # 963 (data)
+0,                             # 964 (data)
+0,                             # 965 (data)
+20,                            # 966 (data) aka STR_IDX_1
+73,                            # 967 (data)		possibly 'I'
+110,                           # 968 (data)		possibly 'n'
+112,                           # 969 (data)		possibly 'p'
+117,                           # 970 (data)		possibly 'u'
+116,                           # 971 (data)		possibly 't'
+32,                            # 972 (data)		possibly ' '
+105,                           # 973 (data)		possibly 'i'
+110,                           # 974 (data)		possibly 'n'
+115,                           # 975 (data)		possibly 's'
+116,                           # 976 (data)		possibly 't'
+114,                           # 977 (data)		possibly 'r'
+117,                           # 978 (data)		possibly 'u'
+99,                            # 979 (data)		possibly 'c'
+116,                           # 980 (data)		possibly 't'
+105,                           # 981 (data)		possibly 'i'
+111,                           # 982 (data)		possibly 'o'
+110,                           # 983 (data)		possibly 'n'
+115,                           # 984 (data)		possibly 's'
+58,                            # 985 (data)		possibly ':'
+10,                            # 986 (data)		possibly '\n'
+13,                            # 987 (data)		possibly '\r'
+10,                            # 988 (data)		possibly '\n'
+87,                            # 989 (data)		possibly 'W'
+97,                            # 990 (data)		possibly 'a'
+108,                           # 991 (data)		possibly 'l'
+107,                           # 992 (data)		possibly 'k'
+105,                           # 993 (data)		possibly 'i'
+110,                           # 994 (data)		possibly 'n'
+103,                           # 995 (data)		possibly 'g'
+46,                            # 996 (data)		possibly '.'
+46,                            # 997 (data)		possibly '.'
+46,                            # 998 (data)		possibly '.'
+10,                            # 999 (data)		possibly '\n'
+10,                            #1000 (data)		possibly '\n'
+13,                            #1001 (data)		possibly '\r'
+10,                            #1002 (data)		possibly '\n'
+82,                            #1003 (data)		possibly 'R'
+117,                           #1004 (data)		possibly 'u'
+110,                           #1005 (data)		possibly 'n'
+110,                           #1006 (data)		possibly 'n'
+105,                           #1007 (data)		possibly 'i'
+110,                           #1008 (data)		possibly 'n'
+103,                           #1009 (data)		possibly 'g'
+46,                            #1010 (data)		possibly '.'
+46,                            #1011 (data)		possibly '.'
+46,                            #1012 (data)		possibly '.'
+10,                            #1013 (data)		possibly '\n'
+10,                            #1014 (data)		possibly '\n'
+25,                            #1015 (data)
+10,                            #1016 (data)		possibly '\n'
+68,                            #1017 (data)		possibly 'D'
+105,                           #1018 (data)		possibly 'i'
+100,                           #1019 (data)		possibly 'd'
+110,                           #1020 (data)		possibly 'n'
+39,                            #1021 (data)		possibly "'"
+116,                           #1022 (data)		possibly 't'
+32,                            #1023 (data)		possibly ' '
+109,                           #1024 (data)		possibly 'm'
+97,                            #1025 (data)		possibly 'a'
+107,                           #1026 (data)		possibly 'k'
+101,                           #1027 (data)		possibly 'e'
+32,                            #1028 (data)		possibly ' '
+105,                           #1029 (data)		possibly 'i'
+116,                           #1030 (data)		possibly 't'
+32,                            #1031 (data)		possibly ' '
+97,                            #1032 (data)		possibly 'a'
+99,                            #1033 (data)		possibly 'c'
+114,                           #1034 (data)		possibly 'r'
+111,                           #1035 (data)		possibly 'o'
+115,                           #1036 (data)		possibly 's'
+115,                           #1037 (data)		possibly 's'
+58,                            #1038 (data)		possibly ':'
+10,                            #1039 (data)		possibly '\n'
+10,                            #1040 (data)		possibly '\n'
+58,                            #1041 (data)		possibly ':'
+73,                            #1042 (data)		possibly 'I'
+110,                           #1043 (data)		possibly 'n'
+118,                           #1044 (data)		possibly 'v'
+97,                            #1045 (data)		possibly 'a'
+108,                           #1046 (data)		possibly 'l'
+105,                           #1047 (data)		possibly 'i'
+100,                           #1048 (data)		possibly 'd'
+32,                            #1049 (data)		possibly ' '
+111,                           #1050 (data)		possibly 'o'
+112,                           #1051 (data)		possibly 'p'
+101,                           #1052 (data)		possibly 'e'
+114,                           #1053 (data)		possibly 'r'
+97,                            #1054 (data)		possibly 'a'
+116,                           #1055 (data)		possibly 't'
+105,                           #1056 (data)		possibly 'i'
+111,                           #1057 (data)		possibly 'o'
+110,                           #1058 (data)		possibly 'n'
+59,                            #1059 (data)		possibly ';'
+32,                            #1060 (data)		possibly ' '
+101,                           #1061 (data)		possibly 'e'
+120,                           #1062 (data)		possibly 'x'
+112,                           #1063 (data)		possibly 'p'
+101,                           #1064 (data)		possibly 'e'
+99,                            #1065 (data)		possibly 'c'
+116,                           #1066 (data)		possibly 't'
+101,                           #1067 (data)		possibly 'e'
+100,                           #1068 (data)		possibly 'd'
+32,                            #1069 (data)		possibly ' '
+115,                           #1070 (data)		possibly 's'
+111,                           #1071 (data)		possibly 'o'
+109,                           #1072 (data)		possibly 'm'
+101,                           #1073 (data)		possibly 'e'
+116,                           #1074 (data)		possibly 't'
+104,                           #1075 (data)		possibly 'h'
+105,                           #1076 (data)		possibly 'i'
+110,                           #1077 (data)		possibly 'n'
+103,                           #1078 (data)		possibly 'g'
+32,                            #1079 (data)		possibly ' '
+108,                           #1080 (data)		possibly 'l'
+105,                           #1081 (data)		possibly 'i'
+107,                           #1082 (data)		possibly 'k'
+101,                           #1083 (data)		possibly 'e'
+32,                            #1084 (data)		possibly ' '
+65,                            #1085 (data)		possibly 'A'
+78,                            #1086 (data)		possibly 'N'
+68,                            #1087 (data)		possibly 'D'
+44,                            #1088 (data)		possibly ','
+32,                            #1089 (data)		possibly ' '
+79,                            #1090 (data)		possibly 'O'
+82,                            #1091 (data)		possibly 'R'
+44,                            #1092 (data)		possibly ','
+32,                            #1093 (data)		possibly ' '
+111,                           #1094 (data)		possibly 'o'
+114,                           #1095 (data)		possibly 'r'
+32,                            #1096 (data)		possibly ' '
+78,                            #1097 (data)		possibly 'N'
+79,                            #1098 (data)		possibly 'O'
+84,                            #1099 (data)		possibly 'T'
+67,                            #1100 (data)		possibly 'C'
+73,                            #1101 (data)		possibly 'I'
+110,                           #1102 (data)		possibly 'n'
+118,                           #1103 (data)		possibly 'v'
+97,                            #1104 (data)		possibly 'a'
+108,                           #1105 (data)		possibly 'l'
+105,                           #1106 (data)		possibly 'i'
+100,                           #1107 (data)		possibly 'd'
+32,                            #1108 (data)		possibly ' '
+102,                           #1109 (data)		possibly 'f'
+105,                           #1110 (data)		possibly 'i'
+114,                           #1111 (data)		possibly 'r'
+115,                           #1112 (data)		possibly 's'
+116,                           #1113 (data)		possibly 't'
+32,                            #1114 (data)		possibly ' '
+97,                            #1115 (data)		possibly 'a'
+114,                           #1116 (data)		possibly 'r'
+103,                           #1117 (data)		possibly 'g'
+117,                           #1118 (data)		possibly 'u'
+109,                           #1119 (data)		possibly 'm'
+101,                           #1120 (data)		possibly 'e'
+110,                           #1121 (data)		possibly 'n'
+116,                           #1122 (data)		possibly 't'
+59,                            #1123 (data)		possibly ';'
+32,                            #1124 (data)		possibly ' '
+101,                           #1125 (data)		possibly 'e'
+120,                           #1126 (data)		possibly 'x'
+112,                           #1127 (data)		possibly 'p'
+101,                           #1128 (data)		possibly 'e'
+99,                            #1129 (data)		possibly 'c'
+116,                           #1130 (data)		possibly 't'
+101,                           #1131 (data)		possibly 'e'
+100,                           #1132 (data)		possibly 'd'
+32,                            #1133 (data)		possibly ' '
+115,                           #1134 (data)		possibly 's'
+111,                           #1135 (data)		possibly 'o'
+109,                           #1136 (data)		possibly 'm'
+101,                           #1137 (data)		possibly 'e'
+116,                           #1138 (data)		possibly 't'
+104,                           #1139 (data)		possibly 'h'
+105,                           #1140 (data)		possibly 'i'
+110,                           #1141 (data)		possibly 'n'
+103,                           #1142 (data)		possibly 'g'
+32,                            #1143 (data)		possibly ' '
+108,                           #1144 (data)		possibly 'l'
+105,                           #1145 (data)		possibly 'i'
+107,                           #1146 (data)		possibly 'k'
+101,                           #1147 (data)		possibly 'e'
+32,                            #1148 (data)		possibly ' '
+65,                            #1149 (data)		possibly 'A'
+44,                            #1150 (data)		possibly ','
+32,                            #1151 (data)		possibly ' '
+66,                            #1152 (data)		possibly 'B'
+44,                            #1153 (data)		possibly ','
+32,                            #1154 (data)		possibly ' '
+67,                            #1155 (data)		possibly 'C'
+44,                            #1156 (data)		possibly ','
+32,                            #1157 (data)		possibly ' '
+68,                            #1158 (data)		possibly 'D'
+44,                            #1159 (data)		possibly ','
+32,                            #1160 (data)		possibly ' '
+74,                            #1161 (data)		possibly 'J'
+44,                            #1162 (data)		possibly ','
+32,                            #1163 (data)		possibly ' '
+111,                           #1164 (data)		possibly 'o'
+114,                           #1165 (data)		possibly 'r'
+32,                            #1166 (data)		possibly ' '
+84,                            #1167 (data)		possibly 'T'
+40,                            #1168 (data)		possibly '('
+73,                            #1169 (data)		possibly 'I'
+110,                           #1170 (data)		possibly 'n'
+118,                           #1171 (data)		possibly 'v'
+97,                            #1172 (data)		possibly 'a'
+108,                           #1173 (data)		possibly 'l'
+105,                           #1174 (data)		possibly 'i'
+100,                           #1175 (data)		possibly 'd'
+32,                            #1176 (data)		possibly ' '
+115,                           #1177 (data)		possibly 's'
+101,                           #1178 (data)		possibly 'e'
+99,                            #1179 (data)		possibly 'c'
+111,                           #1180 (data)		possibly 'o'
+110,                           #1181 (data)		possibly 'n'
+100,                           #1182 (data)		possibly 'd'
+32,                            #1183 (data)		possibly ' '
+97,                            #1184 (data)		possibly 'a'
+114,                           #1185 (data)		possibly 'r'
+103,                           #1186 (data)		possibly 'g'
+117,                           #1187 (data)		possibly 'u'
+109,                           #1188 (data)		possibly 'm'
+101,                           #1189 (data)		possibly 'e'
+110,                           #1190 (data)		possibly 'n'
+116,                           #1191 (data)		possibly 't'
+59,                            #1192 (data)		possibly ';'
+32,                            #1193 (data)		possibly ' '
+101,                           #1194 (data)		possibly 'e'
+120,                           #1195 (data)		possibly 'x'
+112,                           #1196 (data)		possibly 'p'
+101,                           #1197 (data)		possibly 'e'
+99,                            #1198 (data)		possibly 'c'
+116,                           #1199 (data)		possibly 't'
+101,                           #1200 (data)		possibly 'e'
+100,                           #1201 (data)		possibly 'd'
+32,                            #1202 (data)		possibly ' '
+74,                            #1203 (data)		possibly 'J'
+32,                            #1204 (data)		possibly ' '
+111,                           #1205 (data)		possibly 'o'
+114,                           #1206 (data)		possibly 'r'
+32,                            #1207 (data)		possibly ' '
+84,                            #1208 (data)		possibly 'T'
+52,                            #1209 (data)		possibly '4'
+79,                            #1210 (data)		possibly 'O'
+117,                           #1211 (data)		possibly 'u'
+116,                           #1212 (data)		possibly 't'
+32,                            #1213 (data)		possibly ' '
+111,                           #1214 (data)		possibly 'o'
+102,                           #1215 (data)		possibly 'f'
+32,                            #1216 (data)		possibly ' '
+109,                           #1217 (data)		possibly 'm'
+101,                           #1218 (data)		possibly 'e'
+109,                           #1219 (data)		possibly 'm'
+111,                           #1220 (data)		possibly 'o'
+114,                           #1221 (data)		possibly 'r'
+121,                           #1222 (data)		possibly 'y'
+59,                            #1223 (data)		possibly ';'
+32,                            #1224 (data)		possibly ' '
+97,                            #1225 (data)		possibly 'a'
+116,                           #1226 (data)		possibly 't'
+32,                            #1227 (data)		possibly ' '
+109,                           #1228 (data)		possibly 'm'
+111,                           #1229 (data)		possibly 'o'
+115,                           #1230 (data)		possibly 's'
+116,                           #1231 (data)		possibly 't'
+32,                            #1232 (data)		possibly ' '
+49,                            #1233 (data)		possibly '1'
+53,                            #1234 (data)		possibly '5'
+32,                            #1235 (data)		possibly ' '
+105,                           #1236 (data)		possibly 'i'
+110,                           #1237 (data)		possibly 'n'
+115,                           #1238 (data)		possibly 's'
+116,                           #1239 (data)		possibly 't'
+114,                           #1240 (data)		possibly 'r'
+117,                           #1241 (data)		possibly 'u'
+99,                            #1242 (data)		possibly 'c'
+116,                           #1243 (data)		possibly 't'
+105,                           #1244 (data)		possibly 'i'
+111,                           #1245 (data)		possibly 'o'
+110,                           #1246 (data)		possibly 'n'
+115,                           #1247 (data)		possibly 's'
+32,                            #1248 (data)		possibly ' '
+99,                            #1249 (data)		possibly 'c'
+97,                            #1250 (data)		possibly 'a'
+110,                           #1251 (data)		possibly 'n'
+32,                            #1252 (data)		possibly ' '
+98,                            #1253 (data)		possibly 'b'
+101,                           #1254 (data)		possibly 'e'
+32,                            #1255 (data)		possibly ' '
+115,                           #1256 (data)		possibly 's'
+116,                           #1257 (data)		possibly 't'
+111,                           #1258 (data)		possibly 'o'
+114,                           #1259 (data)		possibly 'r'
+101, 100, 0, 109               #1260: state[109] = 100 + state[0]
+1, 1005, 1262, 1270            #1264: state[1270] = state[1005] + state[1262]
+3, 1262                        #1268: state[1262] = input()
+20102, 1, 1262, 0              #1270: state[relative_base] = state[1262]
+109, -1                        #1274: relative_base -= 1
+2106, 0, 0                     #1276: GOTO state[relative_base]
+
+
+
+                               # function FUNC_C
+109, 1                         #1279: relative_base += 1
+21102, 1288, 1, 0              #1281: state[relative_base] = 1288
+1105, 1, 1263                  #1285: GOTO 1263
+
+
+20101, 0, 1262, 0              #1288: state[relative_base] = state[1262]
+1101, 0, 0, 1262               #1292: state[1262] = 0
+109, -1                        #1296: relative_base -= 1
+2106, 0, 0                     #1298: GOTO state[relative_base]
+
+
+
+                               # function FUNC_E
+109, 5                         #1301: relative_base += 5
+21102, 1, 1310, 0              #1303: state[relative_base] = 1310
+1106, 0, 1279                  #1307: GOTO 1279 (aka FUNC_C)
+
+
+22102, 1, 1, -2                #1310: state[relative_base - 2] = state[relative_base + 1]
+22208, -2, -4, -1              #1314: state[relative_base - 1] = state[relative_base - 2] == state[relative_base - 4]
+1205, -1, 1332                 #1318: if state[relative_base - 1]: GOTO 1332
+21201, -3, 0, 1                #1321: state[relative_base + 1] = state[relative_base - 3]
+21101, 0, 1332, 0              #1325: state[relative_base] = 1332
+1106, 0, 1421                  #1329: GOTO 1421 (aka FUNC_D)
+
+
+109, -5                        #1332: relative_base -= 5
+2106, 0, 0                     #1334: GOTO state[relative_base]
+
+
+
+                               # function FUNC_B
+109, 2                         #1337: relative_base += 2
+21101, 0, 1346, 0              #1339: state[relative_base] = 1346
+1105, 1, 1263                  #1343: GOTO 1263
+
+
+21208, 1, 32, -1               #1346: state[relative_base - 1] = state[relative_base + 1] == 32
+1205, -1, 1363                 #1350: if state[relative_base - 1]: GOTO 1363
+21208, 1, 9, -1                #1353: state[relative_base - 1] = state[relative_base + 1] == 9
+1205, -1, 1363                 #1357: if state[relative_base - 1]: GOTO 1363
+1106, 0, 1373                  #1360: GOTO 1373
+
+
+21101, 1370, 0, 0              #1363: state[relative_base] = 1370
+1106, 0, 1279                  #1367: GOTO 1279 (aka FUNC_C)
+
+
+1105, 1, 1339                  #1370: GOTO 1339
+
+
+109, -2                        #1373: relative_base -= 2
+2106, 0, 0                     #1375: GOTO state[relative_base]
+
+
+
+                               # function PRINT_LENGTH_PREFIXED_STR
+109, 5                         #1378: relative_base += 5
+1201, -4, 0, 1385              #1380: state[1385] = state[relative_base - 4]
+21001, 0, 0, -2                #1384: state[relative_base - 2] = state[0]
+22101, 1, -4, -4               #1388: state[relative_base - 4] = 1 + state[relative_base - 4]
+21102, 0, 1, -3                #1392: state[relative_base - 3] = 0
+22208, -3, -2, -1              #1396: state[relative_base - 1] = state[relative_base - 3] == state[relative_base - 2]
+1205, -1, 1416                 #1400: if state[relative_base - 1]: GOTO 1416
+2201, -4, -3, 1408             #1403: state[1408] = state[relative_base - 4] + state[relative_base - 3]
+4, 0                           #1407: print(state[0])
+21201, -3, 1, -3               #1409: state[relative_base - 3] = state[relative_base - 3] + 1
+1106, 0, 1396                  #1413: GOTO 1396
+
+
+109, -5                        #1416: relative_base -= 5
+2106, 0, 0                     #1418: GOTO state[relative_base]
+
+
+
+                               # function FUNC_D
+109, 2                         #1421: relative_base += 2
+104, 10                        #1423: print(10)
+22102, 1, -1, 1                #1425: state[relative_base + 1] = state[relative_base - 1]
+21102, 1, 1436, 0              #1429: state[relative_base] = 1436
+1106, 0, 1378                  #1433: GOTO 1378 (aka PRINT_LENGTH_PREFIXED_STR)
+
+
+104, 10                        #1436: print(10)
+99                             #1438: exit()
+
+
+109, -2                        #1439: relative_base -= 2
+2105, 1, 0                     #1441: GOTO state[relative_base]
+
+
+109, 3                         #1444: relative_base += 3
+20002, 594, 753, -1            #1446: state[relative_base - 1] = state[594] * state[753]
+22202, -1, -2, -1              #1450: state[relative_base - 1] = state[relative_base - 1] * state[relative_base - 2]
+201, -1, 754, 754              #1454: state[754] = state[relative_base - 1] + state[754]
+109, -3                        #1458: relative_base -= 3
+2106, 0, 0                     #1460: GOTO state[relative_base]
+
+
+109, 10                        #1463: relative_base += 10
+21101, 5, 0, -5                #1465: state[relative_base - 5] = 5
+21102, 1, 1, -4                #1469: state[relative_base - 4] = 1
+21102, 0, 1, -3                #1473: state[relative_base - 3] = 0
+1206, -9, 1555                 #1477: if not state[relative_base - 9]: GOTO 1555
+21101, 3, 0, -6                #1480: state[relative_base - 6] = 3
+21102, 1, 5, -7                #1484: state[relative_base - 7] = 5
+22208, -7, -5, -8              #1488: state[relative_base - 8] = state[relative_base - 7] == state[relative_base - 5]
+1206, -8, 1507                 #1492: if not state[relative_base - 8]: GOTO 1507
+22208, -6, -4, -8              #1495: state[relative_base - 8] = state[relative_base - 6] == state[relative_base - 4]
+1206, -8, 1507                 #1499: if not state[relative_base - 8]: GOTO 1507
+104, 64                        #1502: print(64)
+1105, 1, 1529                  #1504: GOTO 1529
+
+
+1205, -6, 1527                 #1507: if state[relative_base - 6]: GOTO 1527
+1201, -7, 716, 1515            #1510: state[1515] = state[relative_base - 7] + 716
+21002, 0, -11, -8              #1514: state[relative_base - 8] = state[0] * -11
+21201, -8, 46, -8              #1518: state[relative_base - 8] = state[relative_base - 8] + 46
+204, -8                        #1522: print(state[relative_base - 8])
+1105, 1, 1529                  #1524: GOTO 1529
+
+
+104, 46                        #1527: print(46)
+21201, -7, 1, -7               #1529: state[relative_base - 7] = state[relative_base - 7] + 1
+21207, -7, 22, -8              #1533: state[relative_base - 8] = state[relative_base - 7] < 22
+1205, -8, 1488                 #1537: if state[relative_base - 8]: GOTO 1488
+104, 10                        #1540: print(10)
+21201, -6, -1, -6              #1542: state[relative_base - 6] = state[relative_base - 6] - 1
+21207, -6, 0, -8               #1546: state[relative_base - 8] = state[relative_base - 6] < 0
+1206, -8, 1484                 #1550: if not state[relative_base - 8]: GOTO 1484
+104, 10                        #1553: print(10)
+21207, -4, 1, -8               #1555: state[relative_base - 8] = state[relative_base - 4] < 1
+1206, -8, 1569                 #1559: if not state[relative_base - 8]: GOTO 1569
+21102, 0, 1, -9                #1562: state[relative_base - 9] = 0
+1106, 0, 1689                  #1566: GOTO 1689
+
+
+21208, -5, 21, -8              #1569: state[relative_base - 8] = state[relative_base - 5] == 21
+1206, -8, 1583                 #1573: if not state[relative_base - 8]: GOTO 1583
+21102, 1, 1, -9                #1576: state[relative_base - 9] = 1
+1105, 1, 1689                  #1580: GOTO 1689
+
+
+1201, -5, 716, 1588            #1583: state[1588] = state[relative_base - 5] + 716
+21001, 0, 0, -2                #1587: state[relative_base - 2] = state[0]
+21208, -4, 1, -1               #1591: state[relative_base - 1] = state[relative_base - 4] == 1
+22202, -2, -1, -1              #1595: state[relative_base - 1] = state[relative_base - 2] * state[relative_base - 1]
+1205, -2, 1613                 #1599: if state[relative_base - 2]: GOTO 1613
+22101, 0, -5, 1                #1602: state[relative_base + 1] = state[relative_base - 5]
+21101, 1613, 0, 0              #1606: state[relative_base] = 1613
+1105, 1, 1444                  #1610: GOTO 1444
+
+
+1206, -1, 1634                 #1613: if not state[relative_base - 1]: GOTO 1634
+22101, 0, -5, 1                #1616: state[relative_base + 1] = state[relative_base - 5]
+21101, 1627, 0, 0              #1620: state[relative_base] = 1627
+1105, 1, 1694                  #1624: GOTO 1694
+
+
+1206, 1, 1634                  #1627: if not state[relative_base + 1]: GOTO 1634
+21102, 1, 2, -3                #1630: state[relative_base - 3] = 2
+22107, 1, -4, -8               #1634: state[relative_base - 8] = 1 < state[relative_base - 4]
+22201, -1, -8, -8              #1638: state[relative_base - 8] = state[relative_base - 1] + state[relative_base - 8]
+1206, -8, 1649                 #1642: if not state[relative_base - 8]: GOTO 1649
+21201, -5, 1, -5               #1645: state[relative_base - 5] = state[relative_base - 5] + 1
+1206, -3, 1663                 #1649: if not state[relative_base - 3]: GOTO 1663
+21201, -3, -1, -3              #1652: state[relative_base - 3] = state[relative_base - 3] - 1
+21201, -4, 1, -4               #1656: state[relative_base - 4] = state[relative_base - 4] + 1
+1106, 0, 1667                  #1660: GOTO 1667
+
+
+21201, -4, -1, -4              #1663: state[relative_base - 4] = state[relative_base - 4] - 1
+21208, -4, 0, -1               #1667: state[relative_base - 1] = state[relative_base - 4] == 0
+1201, -5, 716, 1676            #1671: state[1676] = state[relative_base - 5] + 716
+22002, 0, -1, -1               #1675: state[relative_base - 1] = state[0] * state[relative_base - 1]
+1206, -1, 1686                 #1679: if not state[relative_base - 1]: GOTO 1686
+21101, 1, 0, -4                #1682: state[relative_base - 4] = 1
+1106, 0, 1477                  #1686: GOTO 1477
+
+
+109, -10                       #1689: relative_base -= 10
+2106, 0, 0                     #1691: GOTO state[relative_base]
+
+
+109, 11                        #1694: relative_base += 11
+21101, 0, 0, -6                #1696: state[relative_base - 6] = 0
+21102, 1, 0, -8                #1700: state[relative_base - 8] = 0
+21101, 0, 0, -7                #1704: state[relative_base - 7] = 0
+20208, -6, 920, -9             #1708: state[relative_base - 9] = state[relative_base - 6] == state[920]
+1205, -9, 1880                 #1712: if state[relative_base - 9]: GOTO 1880
+21202, -6, 3, -9               #1715: state[relative_base - 9] = state[relative_base - 6] * 3
+1201, -9, 921, 1724            #1719: state[1724] = state[relative_base - 9] + 921
+21002, 0, 1, -5                #1723: state[relative_base - 5] = state[0]
+1001, 1724, 1, 1732            #1727: state[1732] = state[1724] + 1
+21001, 0, 0, -4                #1731: state[relative_base - 4] = state[0]
+21201, -4, 0, 1                #1735: state[relative_base + 1] = state[relative_base - 4]
+21102, 1, 1, 2                 #1739: state[relative_base + 2] = 1
+21102, 9, 1, 3                 #1743: state[relative_base + 3] = 9
+21102, 1754, 1, 0              #1747: state[relative_base] = 1754
+1105, 1, 1889                  #1751: GOTO 1889
+
+
+1206, 1, 1772                  #1754: if not state[relative_base + 1]: GOTO 1772
+2201, -10, -4, 1766            #1757: state[1766] = state[relative_base - 10] + state[relative_base - 4]
+1001, 1766, 716, 1766          #1761: state[1766] = state[1766] + 716
+21001, 0, 0, -3                #1765: state[relative_base - 3] = state[0]
+1106, 0, 1790                  #1769: GOTO 1790
+
+
+21208, -4, -1, -9              #1772: state[relative_base - 9] = state[relative_base - 4] == -1
+1206, -9, 1786                 #1776: if not state[relative_base - 9]: GOTO 1786
+22101, 0, -8, -3               #1779: state[relative_base - 3] = state[relative_base - 8]
+1106, 0, 1790                  #1783: GOTO 1790
+
+
+22102, 1, -7, -3               #1786: state[relative_base - 3] = state[relative_base - 7]
+1001, 1732, 1, 1796            #1790: state[1796] = state[1732] + 1
+20102, 1, 0, -2                #1794: state[relative_base - 2] = state[0]
+21208, -2, -1, -9              #1798: state[relative_base - 9] = state[relative_base - 2] == -1
+1206, -9, 1812                 #1802: if not state[relative_base - 9]: GOTO 1812
+22102, 1, -8, -1               #1805: state[relative_base - 1] = state[relative_base - 8]
+1105, 1, 1816                  #1809: GOTO 1816
+
+
+21202, -7, 1, -1               #1812: state[relative_base - 1] = state[relative_base - 7]
+21208, -5, 1, -9               #1816: state[relative_base - 9] = state[relative_base - 5] == 1
+1205, -9, 1837                 #1820: if state[relative_base - 9]: GOTO 1837
+21208, -5, 2, -9               #1823: state[relative_base - 9] = state[relative_base - 5] == 2
+1205, -9, 1844                 #1827: if state[relative_base - 9]: GOTO 1844
+21208, -3, 0, -1               #1830: state[relative_base - 1] = state[relative_base - 3] == 0
+1105, 1, 1855                  #1834: GOTO 1855
+
+
+22202, -3, -1, -1              #1837: state[relative_base - 1] = state[relative_base - 3] * state[relative_base - 1]
+1106, 0, 1855                  #1841: GOTO 1855
+
+
+22201, -3, -1, -1              #1844: state[relative_base - 1] = state[relative_base - 3] + state[relative_base - 1]
+22107, 0, -1, -1               #1848: state[relative_base - 1] = 0 < state[relative_base - 1]
+1106, 0, 1855                  #1852: GOTO 1855
+
+
+21208, -2, -1, -9              #1855: state[relative_base - 9] = state[relative_base - 2] == -1
+1206, -9, 1869                 #1859: if not state[relative_base - 9]: GOTO 1869
+21202, -1, 1, -8               #1862: state[relative_base - 8] = state[relative_base - 1]
+1105, 1, 1873                  #1866: GOTO 1873
+
+
+21202, -1, 1, -7               #1869: state[relative_base - 7] = state[relative_base - 1]
+21201, -6, 1, -6               #1873: state[relative_base - 6] = state[relative_base - 6] + 1
+1106, 0, 1708                  #1877: GOTO 1708
+
+
+21201, -8, 0, -10              #1880: state[relative_base - 10] = state[relative_base - 8]
+109, -11                       #1884: relative_base -= 11
+2105, 1, 0                     #1886: GOTO state[relative_base]
+
+
+109, 7                         #1889: relative_base += 7
+22207, -6, -5, -3              #1891: state[relative_base - 3] = state[relative_base - 6] < state[relative_base - 5]
+22207, -4, -6, -2              #1895: state[relative_base - 2] = state[relative_base - 4] < state[relative_base - 6]
+22201, -3, -2, -1              #1899: state[relative_base - 1] = state[relative_base - 3] + state[relative_base - 2]
+21208, -1, 0, -6               #1903: state[relative_base - 6] = state[relative_base - 1] == 0
+109, -7                        #1907: relative_base -= 7
+2106, 0, 0                     #1909: GOTO state[relative_base]
+
+
+0,                             #1912 (data)
+109, 5                         #1913: relative_base += 5
+1202, -2, 1, 1912              #1915: state[1912] = state[relative_base - 2]
+21207, -4, 0, -1               #1919: state[relative_base - 1] = state[relative_base - 4] < 0
+1206, -1, 1930                 #1923: if not state[relative_base - 1]: GOTO 1930
+21101, 0, 0, -4                #1926: state[relative_base - 4] = 0
+22101, 0, -4, 1                #1930: state[relative_base + 1] = state[relative_base - 4]
+21202, -3, 1, 2                #1934: state[relative_base + 2] = state[relative_base - 3]
+21102, 1, 1, 3                 #1938: state[relative_base + 3] = 1
+21102, 1949, 1, 0              #1942: state[relative_base] = 1949
+1106, 0, 1954                  #1946: GOTO 1954
+
+
+109, -5                        #1949: relative_base -= 5
+2105, 1, 0                     #1951: GOTO state[relative_base]
+
+
+109, 6                         #1954: relative_base += 6
+21207, -4, 1, -1               #1956: state[relative_base - 1] = state[relative_base - 4] < 1
+1206, -1, 1977                 #1960: if not state[relative_base - 1]: GOTO 1977
+22207, -5, -3, -1              #1963: state[relative_base - 1] = state[relative_base - 5] < state[relative_base - 3]
+1206, -1, 1977                 #1967: if not state[relative_base - 1]: GOTO 1977
+21201, -5, 0, -5               #1970: state[relative_base - 5] = state[relative_base - 5]
+1105, 1, 2045                  #1974: GOTO 2045
+
+
+21202, -5, 1, 1                #1977: state[relative_base + 1] = state[relative_base - 5]
+21201, -4, -1, 2               #1981: state[relative_base + 2] = state[relative_base - 4] - 1
+21202, -3, 2, 3                #1985: state[relative_base + 3] = state[relative_base - 3] * 2
+21102, 1, 1996, 0              #1989: state[relative_base] = 1996
+1105, 1, 1954                  #1993: GOTO 1954
+
+
+21201, 1, 0, -5                #1996: state[relative_base - 5] = state[relative_base + 1]
+21102, 1, 1, -2                #2000: state[relative_base - 2] = 1
+22207, -5, -3, -1              #2004: state[relative_base - 1] = state[relative_base - 5] < state[relative_base - 3]
+1206, -1, 2015                 #2008: if not state[relative_base - 1]: GOTO 2015
+21101, 0, 0, -2                #2011: state[relative_base - 2] = 0
+22202, -3, -2, -3              #2015: state[relative_base - 3] = state[relative_base - 3] * state[relative_base - 2]
+22107, 0, -4, -1               #2019: state[relative_base - 1] = 0 < state[relative_base - 4]
+1206, -1, 2037                 #2023: if not state[relative_base - 1]: GOTO 2037
+22102, 1, -2, 1                #2026: state[relative_base + 1] = state[relative_base - 2]
+21101, 2037, 0, 0              #2030: state[relative_base] = 2037
+106, 0, 1912                   #2034: GOTO state[1912]
+
+
+21202, -3, -1, -3              #2037: state[relative_base - 3] = state[relative_base - 3] * -1
+22201, -5, -3, -5              #2041: state[relative_base - 5] = state[relative_base - 5] + state[relative_base - 3]
+109, -6                        #2045: relative_base -= 6
+2106, 0, 0                     #2047: GOTO state[relative_base]
+
+

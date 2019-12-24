@@ -2,6 +2,7 @@ import intcomputer as ic
 import re
 import sys
 import json
+import string
 
 ASUSME_RELATIVE_CALL_STACK_IDIOM = True
 
@@ -174,6 +175,10 @@ def dis(program, annotations, decompile_reachable_only=False):
             except InstructionParseError:
                 pass
 
+    for a,b in annotations["data ranges"]:
+        for idx in range(a,b+1):
+            seen.discard(idx)
+
     pc = 0
     while pc < len(program):
         if str(pc) in annotations["functions"]:
@@ -192,6 +197,8 @@ def dis(program, annotations, decompile_reachable_only=False):
             line = f"{str(program[pc]) + ',':30} #{pc:4} (data)"
             if str(pc) in annotations["global variables"]:
                 line += f" aka {annotations['global variables'][str(pc)]}"
+            if program[pc] in map(ord, string.printable):
+                line += f"\t\tpossibly {repr(chr(program[pc]))}"
             print(line)
             pc += 1
 
@@ -202,9 +209,14 @@ if __name__ == "__main__":
             annotations = json.load(file)
     else:
         annotations = {}
-    for section in ("global variables", "functions"):
+    expected_section_defaults = {"global variables": {}, "functions": {}, "data ranges": []}
+    for section, default in expected_section_defaults.items():
         if section not in annotations:
-            annotations[section] = {}
+            annotations[section] = default
+    unexpected_sections = list(annotations.keys() - expected_section_defaults.keys())
+    if unexpected_sections:
+        print("Warning: annotation json contains unexpected sections:", "\n".join("  " + section for section in unexpected_sections))
+        print(f"Expected sections are {expected_section_defaults.keys()}")
     
     program = ic.load(filename)
     dis(program, annotations)
