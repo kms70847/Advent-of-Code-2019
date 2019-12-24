@@ -1,0 +1,31 @@
+{
+    "global variables": {
+        "61": "SEEN_ANY_NEG_ONE_INPUTS_YET",
+        "62": "TEMP_1",
+        "63": "TEMP_2",
+        "64": "X",
+        "65": "Y",
+        "66": "X_DEOBFUSCATION_KEY",
+        "67": "{TABLE_SIZE/2-1}",
+        "68": "TABLE_PTR",
+        "69": "FUNC_PTR",
+        "70": "OUTPUT?",
+        "71": "ROUTE_TABLE_SIZE",
+        "72": "ROUTE_TABLE_PTR",
+
+        "relative_base": "RETURN ADDRESS",
+        "relative_base + 1": "arg_1", 
+        "relative_base + 2": "arg_2", 
+        "relative_base - 1": "a",
+        "relative_base - 2": "b",
+        "relative_base - 3": "c"
+    },
+    "functions": {
+        "73": "MAINLOOP",
+        "436": "DIVIDE",
+        "556": "GET_FIRST_ITEM_IN_TABLE",
+        "302": "TABLE_PROD",
+        "253": "TABLE_SUM",
+        "351": "DIVIDE_FIRST_AND_SECOND_TABLE_ITEMS"
+    }
+}
