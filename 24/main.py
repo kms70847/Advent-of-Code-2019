@@ -106,10 +106,7 @@ class State:
                 neighbor_count = 0
                 for depth_delta, n_x, n_y in self.neighbor_locations[x,y]:
                     state = None
-                    #determine which state the neighbor is in -- self, parent, or child. 
-                    #Create the parent/child instance if bugs might appear in it this tick.
                     if depth_delta == -1:
-                        #print(f"depth_delta == -1 for state={id(self)} x,y = {x,y}, c = {c}, neighbor_locs = {depth_delta, n_x, n_y}")
                         state = self.parent
                     elif depth_delta == 1:
                         state = self.child
