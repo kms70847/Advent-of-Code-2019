@@ -1,6 +1,7 @@
 import re
 import copy
 import collections
+import json
 
 ADD = 1
 MUL = 2
@@ -30,6 +31,26 @@ class Computer:
         self.relative_base = 0
         self.halted = False
 
+    def dumps(self):
+        return json.dumps({
+            "pc": self.pc,
+            "relative_base": self.relative_base,
+            "halted": self.halted,
+            "inputs": list(self.inputs),
+            "program": dict(self.program)
+        })
+
+    @staticmethod
+    def loads(s):
+        d = json.loads(s)
+        result = Computer([])
+        result.pc = d["pc"]
+        result.relative_base = d["relative_base"]
+        result.halted = d["halted"]
+        result.inputs = collections.deque(d["inputs"])
+        result.program = collections.defaultdict(int, {int(k): v for k,v in d["program"].items()})
+        return result
+
     def needs_input(self):
         return self.program[self.pc]%100 == INPUT and len(self.inputs) == 0
 
@@ -38,7 +59,14 @@ class Computer:
         """
         add x to the input queue.
         """
-        self.inputs.appendleft( x)
+        self.inputs.appendleft(x)
+
+    def send_str(self, s):
+        """
+        add the ordinal value of each char in `s` to the input queue.
+        """
+        for c in s:
+            self.send(ord(c))
 
     def tick(self):
         """
@@ -70,7 +98,7 @@ class Computer:
         advance_pc = True
         mode, opcode = divmod(self.program[self.pc], 100)
         if opcode not in num_params:
-            raise Exception(f"Unrecognized opcode {opcode}")
+            raise Exception(f"Unrecognized opcode {opcode} at address {self.pc}")
 
         params = [self.program[self.pc+1+i] for i in range(num_params[opcode])]
         modes = [(mode // (10**i))%10 for i in range(num_params[opcode])]
