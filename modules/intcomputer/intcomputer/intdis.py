@@ -82,6 +82,9 @@ class Instruction:
     def is_terminal(self):
         return self.opcode == ic.HALT or self.is_unconditional_jump()
 
+    def is_function_return(self):
+        return self.is_jump() and self.modes[1] == ic.RELATIVE
+
     def looks_like_call(self):
         """
         return True if this instruction appears to be doing `state[relative_base] = ...`.
@@ -148,7 +151,7 @@ def dis(program, annotations, decompile_reachable_only=False):
         for address, name in annotations["global variables"].items():
             line = line.replace(f"state[{address}]", name)
         for address, name in annotations["functions"].items():
-            line = line.replace(f"GOTO {address}", f"GOTO {address} (aka {name})")
+            line = re.sub(f"GOTO {address}\\b", f"GOTO {address} (aka {name})", line)
         return line
 
     #identify which instructions are reachable from the beginning of the program.
@@ -190,7 +193,7 @@ def dis(program, annotations, decompile_reachable_only=False):
             line = f"{str(program[pc:pc+1+len(instruction.params)]).strip('[]'):30} #{pc:4}: {line}"
             line = apply_annotations(line)
             print(line)
-            if instruction.is_terminal():
+            if instruction.is_function_return():
                 print("\n")
             pc += 1 + len(instruction.params)
         else:
