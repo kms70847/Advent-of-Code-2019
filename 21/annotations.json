@@ -1,16 +1,57 @@
 {
     "global variables": {
-        "748": "TEMP",
-        "966": "STR_IDX_1"
+        "594": "POINTER_INTO_PACKED_FIELD_TABLE",
+        "726": "UNPACKED_FIELD_TABLE",
+        "748": "TEMP1",
+        "749": "TEMP2",
+        "750": "OPERATOR",
+        "751": "OPERAND_1",
+        "752": "OPERAND_2",
+        "753": "PACKED_CURRENT_FIELD",
+        "754": "SCORE",
+        "755": "WALK_OR_RUN_MODE",
+        "756": "PROGRAM_USES_ADVANCED_SENSORS",
+        "757": "POINTER_INTO_UNPACKED_FIELD_TABLE",
+        "758": "PACKED_GAP_TABLE",
+        "920": "PROGRAM_SIZE",
+        "921": "PROGRAM_TABLE",
+        "966": "STR_DATA_START",
+        "1262": "INPUT_BUF"
     },
     "functions":{
+        "13": "PARSE_PROGRAM",
+        "73": "PARSE_AND_INSTRUCTION_ND",
+        "110": "PARSE_OR_INSTRUCTION_R",
+        "132": "PARSE_NOT_INSTRUCTION",
+        "169": "PARSE_WALK_INSTRUCTION",
+        "239": "PARSE_RUN_INSTRUCTION",
+        "298": "PARSE_INSTRUCTION_PARAMS",
+
+        "500": "STORE_PARSED_INSTRUCTION",
+        "553": "VERIFY_SENSOR_PERMISSIONS",
+        "570": "PRINT_START_MESSAGE",
+        "592": "MOVE_LOOP",
+        "624": "PRINT_DIDNT_MAKE_IT_AND_EXIT",
+        "647": "SURVIVED",
+        "654": "REACHED_A_CHECKPOINT",
+        "664": "PRINT_SCORE_AND_EXIT",
+        "667": "UNPACK_FIELD",
+        "697": "UNPACK_SINGLE_TILE",
+
+        "1263": "GETCHAR_MAYBE",
+        "1279": "CLEAR_INPUT_BUF_AND_RETURN_MOST_RECENT_VALUE",
+        "1301": "EXPECT_CHAR_OR_CRASH",
+        "1337": "GETCHAR_NONWHITESPACE",
         "1378": "PRINT_LENGTH_PREFIXED_STR",
-        "1337": "FUNC_B",
-        "1279": "FUNC_C",
-        "1421": "FUNC_D",
-        "1301": "FUNC_E"
+        "1444": "INCREASE_SCORE_BY_PRODUCT",
+        "1421": "PRINT_STR_AND_EXIT",
+        "1463": "MOVE_THROUGH_FIELD(verbose)",
+        "1694": "SHOULD_JUMP",
+        "1889": "{param_c >= param_a >= param_b}",
+        "1913": "MAP_CALLBACK_OVER_BITFIELD(x, maxbits, callback)",
+        "1954": "MAP_CALLBACK_WORKLOOP(x, maxbits, startbit)"
     },
     "data ranges": [
-        [716, 1259]
+        [716, 1262]
     ]
 }

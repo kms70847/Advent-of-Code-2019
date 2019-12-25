@@ -15,6 +15,8 @@ def execute(springcode, verbose=False):
 
     rows = [[]]
     while True:
+        if computer.program[716] != 1:
+            raise Exception(f"716 changed value around pc {computer.pc}")
         if (x := computer.tick()) is not None:
             if x > 256:
                 return x
@@ -187,6 +189,9 @@ AND A J
 NOT J J
 RUN
 """
+
+#just walks forward
+#s = """WALK\n"""
 
 if (size:= len(s.split("\n"))) > 16:
     print(f"Warning: program is {size-1} lines long, which may be rejected")

@@ -3,6 +3,7 @@ import re
 import sys
 import json
 import string
+import os
 
 ASUSME_RELATIVE_CALL_STACK_IDIOM = True
 
@@ -207,8 +208,9 @@ def dis(program, annotations, decompile_reachable_only=False):
 
 if __name__ == "__main__":
     filename = "input" if len(sys.argv) < 2 else sys.argv[1]
-    if len(sys.argv) >= 3:
-        with open(sys.argv[2]) as file:
+    annotations_filename = "annotations.json" if len(sys.argv) < 3 else sys.argv[2]
+    if os.path.exists(annotations_filename):
+        with open(annotations_filename) as file:
             annotations = json.load(file)
     else:
         annotations = {}
