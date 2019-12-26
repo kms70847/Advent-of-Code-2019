@@ -1,7 +1,8 @@
 {
     "global variables": {
         "594": "POINTER_INTO_PACKED_FIELD_TABLE",
-        "726": "UNPACKED_FIELD_TABLE",
+        "716": "UNPACKED_FIELD_TABLE_STATIC_COMPONENT",
+        "726": "UNPACKED_FIELD_TABLE_ACTUAL_CHANGEABLE_COMPONENT",
         "748": "TEMP1",
         "749": "TEMP2",
         "750": "OPERATOR",

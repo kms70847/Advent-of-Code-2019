@@ -14,9 +14,12 @@ def execute(springcode, verbose=False):
         computer.send(ord(c))
 
     rows = [[]]
+    #computer.program[1665] = 0 #flight mode
     while True:
-        if computer.program[716] != 1:
-            raise Exception(f"716 changed value around pc {computer.pc}")
+        if computer.pc == 610:
+            print(f"Packed data: {computer.program[753]:3}; unpacked data:", [computer.program[x] for x in range(716, 747)])
+        # for i in range(726, 734):     #no gap mode
+            # computer.program[i]= 1
         if (x := computer.tick()) is not None:
             if x > 256:
                 return x
@@ -60,12 +63,9 @@ def iter_springcodes(sensor_names):
         program.append("NOT T J")
         yield "\n".join(program)
 
-s = """NOT D T
-NOT T J
-WALK
-"""
 
 """
+Part 1 solution
 eager jump
 if any of A,B,C are holes, and D is solid, then jump
 equivalently,
@@ -83,94 +83,7 @@ NOT T T
 AND D T
 NOT T T
 NOT T J
-RUN
-"""
-
-"""
-broken JIT jump
-
-if A is a hole:
-    J = 1
-else:
-    if B is a hole and E is a hole:
-        J = 1
-    else:
-        if C is a hole and F is a hole:
-            J = 1
-        else:
-            if D is a hole and G is a hole:
-                J = 1
-            else:
-                J = 0
-
-J = (~A) or (~B and ~E) or (~C and ~F) or (~D and ~G)
-J = ~(A) or ~(B or E) or ~(C or F) or ~(D or G)
-J = ~(A and (B or E) and (C or F) and (D or G))
-J = ~(A and ((B or E) and ((C or F) and (D or G))))
-
-T = G
-T = T or D
-J = F
-J = C or J
-T = T and J
-J = E
-J = J or B
-T = T and J
-T = T and A
-T = not T
-J = T
-"""
-
-s = """NOT G T
-NOT T T
-OR D T
-NOT F J
-NOT J J
-OR C J
-AND J T
-NOT E J
-NOT J J
-OR B J
-AND J T
-AND A T
-NOT T J
-RUN
-"""
-
-"""
-every case jump
-J = (~A or (A and ~B and ~C and D and ~E)):
-J = (~A or (A and (~B and (~C and (D and ~E))))):
-J = ~(A and ~(A and ~(B or (C or ~(D and ~E))))):
-
-
-"""
-
-s = """NOT E T
-AND D T
-NOT T T
-OR C T
-OR B T
-NOT T T
-AND A T
-NOT T T
-AND A T
-NOT T J
-RUN
-"""
-
-s = """NOT E J
-NOT J J
-OR H J
-AND D J
-OR G J
-AND C J
-OR F J
-AND B J
-OR E J
-AND A J
-NOT J J
-RUN
+WALK
 """
 
 #finds a path to the first unseen tile as long as one exists
@@ -190,8 +103,16 @@ NOT J J
 RUN
 """
 
-#just walks forward
-#s = """WALK\n"""
+# #just walks forward
+# s = """WALK\n"""
+
+# #always jumps
+# s = """NOT J J\nWALK\n"""
+
+#J = NOT A
+s = """NOT A J
+RUN
+"""
 
 if (size:= len(s.split("\n"))) > 16:
     print(f"Warning: program is {size-1} lines long, which may be rejected")
